@@ -1,15 +1,25 @@
-import { View, TouchableOpacity } from "react-native";
 import React from "react";
-import Title from "../../components/Title";
+import { View, ImageBackground, Text } from "react-native";
 import styles from "./styles";
-import { useNavigation } from "@react-navigation/native";
-
+import TouchBotton from "../../components/TouchBotton";
 
 export default function Home() {
-  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
-      <Title title="Home" />
-    </View>
+    
+      <ImageBackground
+        source={require("../../../assets/lua2.jpeg")}
+        style={styles.background}
+      >
+        <View style={styles.container}>
+          <Text style={styles.tit} >Seja Bem-vindo Conquistador</Text> 
+          <TouchBotton route="ListaPLanetas" title="Lista de Planetas" />
+          <View style={styles.linha}></View>
+          <TouchBotton route="Conquistador" title="Conquistador" />
+          <View style={styles.linha}></View>
+          <TouchBotton route="CriarPlanetas" title="Criar Planetas" />
+          <View style={styles.linha}></View>
+        </View>
+      </ImageBackground>
+    
   );
-};
+}
